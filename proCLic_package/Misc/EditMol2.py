@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+
+import os
+import shutil
+import sys
+import string
+
+start_directory = os.getcwd()
+
+mol2_files = [f for f in os.listdir(start_directory) if f.endswith('.mol2')]
+print(mol2_files)
+
+mol2 = input("Enter the mol2 file to be converted: ")
+    
+
+IN = mol2
+OUT = mol2
+NEW = "new.mol2"
+outfile = open(NEW, 'a+')
+
+
+with open(IN, 'r') as readfile:
+    for line in readfile:
+        # Checks for the conformation letter at pos 15 and replace with ''
+        #line = line.lstrip()
+        if line[51:52] != ' ':
+            #print(line[51:52])
+            new = list(line)
+            new[51:52] = ' '
+            #print(new)
+            if new[-1] == ' ': #removes last element in the list if ' '
+                del new[-1]
+            newline = ''.join(new)
+            #print(newline)
+            outfile.write(newline)
+        else:
+            outfile.write(line)
+                   
+readfile.close()
+outfile.close()
+
+shutil.copy2(NEW, IN)
+os.remove(NEW)
+
