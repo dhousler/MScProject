@@ -586,7 +586,7 @@ def checkForConformations(conformation_dirs,conformation_dirs_match, mergeDecisi
         conformation_dirs_match = str(conformation_dirs[0])[1:]
         #print(conformation_dirs_match)
 
-    for i in range(len(directories)):###?might be reason for loop????
+    for i in range(len(directories)):#Checks for a dir with only 3 letters to match the four letter conf dir if the first letter is ignored
         if (len(directories[i])) == 3 and (str(directories[i]) == conformation_dirs_match):
             main_lig_dir = directories[i]
             print("\nIMPORTANT MESSAGE:\nThere are multiple conformations of the ligand: " + main_lig_dir)
@@ -596,16 +596,18 @@ def checkForConformations(conformation_dirs,conformation_dirs_match, mergeDecisi
         if (mergeDecision == 'y'):
             os.system('python3.3 /root/proCLic_package/conformation_merger.py')
 
-            print("\nIMPORTANT:\nThe conformation .pdb file of choice will need to be re-run.")
-            print("\nSelect the .pdb conformation file of interest and \nre-run the menu option 1. \nRun only the ligands again. \n")
-            print("If more than one conformation needs to be run, \nrename the directories after each run, accordingly. (e.g., mv XXX AXXX)")
+            print("\n----- IMPORTANT: -----\n")
+            print("\nIf the conformation files are as expected run: \n\n   python3.3 /root/proCLic_package/Misc/conformationFolders.py")
+            print("\nAlternatively, rerun the proCLic Menu and select: \n\n   Option III - Create Conformation Directories; from the Miscellaneous Menu.\n")
+            print("\nThe ligands will need to be re-run, selecting Menu option 1. \nwithin each conformation directory\n\n----------")
+            #print("\nSelect the .pdb conformation file of interest and \nre-run the menu option 1. \nRun only the ligands again. \n")
+            #print("If more than one conformation needs to be run, \nrename the directories after each run, accordingly. (e.g., mv XXX AXXX)")
            
             input("\nPress any key to continue: ")
             sys.exit(1)
         else:
             pass
-        
-        
+               
             
 #END DEF
 ##########
@@ -685,6 +687,7 @@ if Lig_convert == 'y':
     myarrayligN_chainSet,
     ligand_array_number)
 
+
     ## Add the suffix Labels to the ligand files
     for i in range(len(fileType)):
         suffixLabel(ligandDir, new_fileName, fileType[i])
@@ -696,7 +699,8 @@ if Lig_convert == 'y':
     #print("Please change to the correct ligand directory and run the menu options for each ligand in the associated directory.")
 
     #-----CHECK FOR MULTIPL CONFORMATIONS-----#
-    checkForConformations(conformation_dirs,conformation_dirs_match, mergeDecision)
+    #checkForConformations(conformation_dirs,conformation_dirs_match, mergeDecision)
+    mergedecision = checkForConformations(conformation_dirs,conformation_dirs_match, mergeDecision)
     
 
     ###Insert jump between ligand program here

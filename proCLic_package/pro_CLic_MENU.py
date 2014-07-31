@@ -69,9 +69,9 @@ loop = False
 if (loop == False):
     ###PROGRAM MENU###
     print("\nPROGRAM MENU")
-    print("1. Run Chain Separate on the PDB file.\n2. Run Chimera.\n3. Run Directory Manager.\n4. Generate pro_CLic counts.\n5. Run pro_CLic chain decision maker.\n")
+    print("1. Run Chain Separate on the PDB file.\n2. Run Chimera.\n3. Run Directory Manager.\n4. Generate pro_CLic counts.\n")
     print("MISCELLANEOUS PROGRAMS")
-    print("I.  Count Residues\nII. Check Occupancy\nIII. Mol2 Fixer\n")
+    print("I.    Count Residues\nII.   Mol2 Fixer\nIII.  Create Conformation Directories\n")
     print("q to quit")
     menu = input()
 
@@ -119,13 +119,6 @@ if (loop == False):
         os.chdir(path)
         CheckMultiLigDirs()
         os.system ('python3.3 /root/proCLic_package/pro_CLic_runDirectories.py')
-    
-    ### Run Chain Decision program ###
-    if (menu == "5"):
-        removePDBRemnants()
-        os.chdir(path)
-        CheckMultiLigDirs()
-        os.system('python3.3 /root/proCLic_package/pro_CLic_chainDecisionMaker.py')
 
     ####################
     ###MISCELLANEOUS####
@@ -136,11 +129,11 @@ if (loop == False):
 
     if (menu == "ii") or (menu == "II"):
         os.chdir(path)
-        os.system('python3.3 /root/proCLic_package/Misc/PercentageOccupancy.py')
-        
+        os.system('python3.3 /root/proCLic_package/Misc/Mol2Fixer.py')
+
     if (menu == "iii") or (menu == "III"):
         os.chdir(path)
-        os.system('python3.3 /root/proCLic_package/Misc/Mol2Fixer.py')
+        os.system('python3.3 /root/proCLic_package/Misc/conformationFolders.py.py')
           
     else:
         loop = True

@@ -7,8 +7,11 @@
 #def checkForConformations() for links to this program
 
 ### PROGRAM PROCEDURE ###
-#1.  Copies all of the .pdbfiles for any folders that have the same name
+#1.  Copies all of the .pdb files for any folders that have the same name
 #    because these are likely to be conformation files.
+#    An initial match in the ChainSeparate2PDB_PtnLigUNIX_dir.py would have been done by:
+#    Finding all 4 character folders, removing the first character and matching to a 3 char folder
+#    If a match is found and the accepts the option to run this program script, then it is initiated.
 #2.  New directories are created to keep multiple conformations separate.
 #3.  Once the MAIN Ligand .pdb file and the conformation .pdb file is in the same directory
 #4.  The lines from the short conformation .pdb is moved to the MAIN .pdb file
@@ -191,7 +194,7 @@ def rename_startDIR_confFiles(start_directory):
         if len(underscore_split) > 2:
             #print(underscore_split[2])
             newConfPDBname = underscore_split[0] + underscore_split[2] + ".pdb"
-            print("CONFORMATION FILES CREATED: \n")
+            print("\nCONFORMATION FILES CREATED:")
             print(newConfPDBname)
 
             os.rename(changedPDBFile[j], newConfPDBname)
@@ -204,14 +207,11 @@ def moveFINALConf_files(confDirs):
     pdbFilesOnly =  [f for f in os.listdir(start_directory) if  f.endswith(".pdb")]
 
     pdbFilesOnly.sort()
-
-    print(len(pdbFilesOnly))
     
     for i in range(len(pdbFilesOnly)):
         #print(pdbFilesOnly)
 
         period_split = re.split('\.',pdbFilesOnly[i])
-        print(period_split)
         
         if len(period_split[0]) == 8:
             dirname = list(period_split[0])
@@ -225,7 +225,7 @@ def moveFINALConf_files(confDirs):
             shutil.copy2(pdbFilesOnly[i], dirname)
 
             confDirs += [dirname]
-            print(confDirs)
+            #print(confDirs)
 
     for i in range(len(pdbFilesOnly)):
         if len(pdbFilesOnly[i]) > 13:
@@ -339,14 +339,15 @@ for i in range(len(con_directories_new2)):
 ###DELETE ALL CONFORMATION FILES FOR RE RUN
 
 os.chdir(start_directory)
-shutil.rmtree(confDIR) # removes the conformation dir with files therein
+shutil.rmtree(confDIR) # removes the conformation dir with files therein (switch off if want to see file separation for **errors)
 remove_conformationDirs(conformation_dirs, mainConfdir) # removes all of the directories with conformation data
 
 #renames conformation files in startDIR for chain_separate.py re-rerun
 rename_startDIR_confFiles(start_directory)     
 
+####
 #Moves all of the conformation files into new directories ready for chain separate program re-run
-moveFINALConf_files(confDirs)
+#moveFINALConf_files(confDirs)
         
             
                

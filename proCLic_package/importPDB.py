@@ -20,7 +20,7 @@ from chimera import runCommand
 
 start_directory = os.getcwd()
 
-PDB_ref = raw_input("Enter the PDB ref to fetch: ") #raw_input as uses python 2
+PDB_ref = raw_input("Enter the PDB ref to fetch, without the .pdb file type: ") #raw_input as uses python 2
 #PDB_full = PDB_ref + ".pdb"
 #openModels = chimera.openModels.open(PDB_full, type="PDB") #opens chimera gui
 
