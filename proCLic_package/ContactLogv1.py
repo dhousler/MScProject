@@ -3,7 +3,14 @@
 # Author: Dale Housler
 # Date: 13-05-2014
 # Python: 3.3
-#
+# ContactLogv1.py
+
+'''
+This program calculates the Polar, Apolar and Binding water contact count details
+from the proACT2 created file residue_contacts.csv
+It also created the .txt files in which these contact count runs are stored as well as
+the final ligand log.csv file containing a summary of all of the protein chain - ligand cross-referenced data.
+'''
 
 
 import os   #Allows for operating system commands

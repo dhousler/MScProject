@@ -7,6 +7,14 @@
 # PROGRAM: pro-CLic_runDirectories
 #####
 
+'''
+This program loops through all of the protein chain directories within the ligand directory
+and runs proACT2 for each protein chain - ligand corss-reference.
+
+And, alerts the user if proACT for some reason has not run and contact count details have therefore
+not been obtained.
+'''
+
 import os # Operating system commands
 import re # Regular expressions
 import sys # Allows exit for error messages

@@ -339,7 +339,7 @@ for i in range(len(con_directories_new2)):
 ###DELETE ALL CONFORMATION FILES FOR RE RUN
 
 os.chdir(start_directory)
-shutil.rmtree(confDIR) # removes the conformation dir with files therein (switch off if want to see file separation for **errors)
+shutil.rmtree(confDIR) # removes the conformation dir with files therein (***switch off if want to see file separation for **errors)
 remove_conformationDirs(conformation_dirs, mainConfdir) # removes all of the directories with conformation data
 
 #renames conformation files in startDIR for chain_separate.py re-rerun
