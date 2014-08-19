@@ -16,7 +16,7 @@ the final ligand log.csv file containing a summary of all of the protein chain -
 import os   #Allows for operating system commands
 import re   #Regular expressions
 import csv  #Imports read csv commands
-import operator
+import operator #Additional csv functionality
 import sys  #Allows exit for error messages
 
 start_directory = os.getcwd()

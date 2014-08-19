@@ -69,7 +69,7 @@ loop = False
 if (loop == False):
     ###PROGRAM MENU###
     print("\nPROGRAM MENU")
-    print("1. Run Chain Separate on the PDB file.\n2. Run Chimera.\n3. Run Directory Manager.\n4. Generate pro_CLic counts.\n")
+    print("1. Run Chain Separate on the PDB file.\n2. Run Chimera.\n3. Run Directory Manager.\n4. Generate pro_CLic counts - Active Site.\n5. Generate pro_CLic counts - Change Unbound to Bound.\n")
     print("MISCELLANEOUS PROGRAMS")
     print("I.    Count Residues\nII.   Mol2 Fixer\nIII.  Create Conformation Directories\n")
     print("q to quit")
@@ -120,6 +120,10 @@ if (loop == False):
         CheckMultiLigDirs()
         os.system ('python3.3 /root/proCLic_package/pro_CLic_runDirectories.py')
 
+    if (menu == "5"):
+        os.chdir(path)
+        os.system('python3.3 /root/proCLic_package/Phase2/ChangeInContactsLog.py')
+
     ####################
     ###MISCELLANEOUS####
 
@@ -133,7 +137,10 @@ if (loop == False):
 
     if (menu == "iii") or (menu == "III"):
         os.chdir(path)
-        os.system('python3.3 /root/proCLic_package/Misc/conformationFolders.py.py')
+        os.system('python3.3 /root/proCLic_package/Misc/conformationFolders.py')
+
+    ####################
+
           
     else:
         loop = True
