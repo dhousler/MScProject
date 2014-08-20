@@ -625,7 +625,7 @@ while loop == 'T':
     print("\n   A:     All protein chains in one .pdb file.\n")
     print("   S:     Protein chains saved as separate .pdb files.\n")
     print("   P:     Protein chains converted to .pdb files AND\n          any chains with <= 24 residues converted to .mol2 files\n")
-    print("   E:     All Protein chains converted to both .pdb and .mol2\n          (Conversion is timely.)\n")
+    print("   E:     All Protein chains converted to both .pdb and .mol2\n          (Conversion is time consuming.)\n")
     print("   N:     Skips protein chain conversion.")
     
     TS = str(input()).lower()  
