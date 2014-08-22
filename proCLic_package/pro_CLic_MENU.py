@@ -127,7 +127,7 @@ if (loop == False):
     ####################
     ###MISCELLANEOUS####
 
-    if (menu == "i") or (menu == "I") or (menu == "III"):
+    if (menu == "i") or (menu == "I") :
         os.chdir(path)
         os.system('python3.3 /root/proCLic_package/Misc/CountResidues.py')
 
