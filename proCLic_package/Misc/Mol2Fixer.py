@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+#Author: Dale Housler
+#Mol2Fixer
+
+#This program removes any character between columns 6 and 7 in the .mol2 file where a space is expected
+#This program is run from the misc proCLic menu if proACT2 show as 'Value Error'
+
 import os
 import shutil
 import sys
