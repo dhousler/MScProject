@@ -69,9 +69,9 @@ def Get_ChangeInContacts(ptn_chain_file,lig_chain_file):
     polar_water_contacts =(columns['polar_water_contacts'])
     apolar_water_contacts = (columns['apolar_water_contacts'])
 
-    print("Chainge in Polar Contacts: " + polar_contacts[3])
+    print("Change in Polar Contacts: " + polar_contacts[3])
     print("Change in Apolar Contacts: " + apolar_contacts[3])
-    print("Chainge in Polar Water Contacts: " + polar_water_contacts[3])
+    print("Change in Polar Water Contacts: " + polar_water_contacts[3])
     print("Change in Apolar Water Contacts: " + apolar_water_contacts[3])
 
     #Get the PDB reference
@@ -98,7 +98,7 @@ def Get_ChangeInContacts(ptn_chain_file,lig_chain_file):
     g.write("---------- Change in Polar and Apolar Contacts ----------\n\n")
     g.write("Change in Polar Contacts: " + polar_contacts[3] + "\n")
     g.write("Change in Apolar Contacts: " + apolar_contacts[3] + "\n")
-    g.write("Chainge in Polar Water Contacts: " + polar_water_contacts[3] + "\n")
+    g.write("Change in Polar Water Contacts: " + polar_water_contacts[3] + "\n")
     g.write("Change in Apolar Water Contacts: " + apolar_water_contacts[3] + "\n")
     g.write('\n')
     g.close()#Closes PDB File
