@@ -46,6 +46,7 @@ def runProACT2_complex_Formation(ptn_chain_file,lig_chain_file):
     os.chdir('complex_run')
     #Run the proACT2 complex formation command
     #print("python /root/proACT2/proACT2.py --only_binding_site --complex_formation " + ptn_chain_file + " " + lig_chain_file + " --no_naccess --no_water_pdb --no_cavity_pdb")
+    ### remove " --no_naccess --no_water_pdb --no_cavity_pdb" if all files are to be run, so that solvation files can be used for Chimera viewing)
     os.system("python /root/proACT2/proACT2.py --only_binding_site --complex_formation " + ptn_chain_file + " " + lig_chain_file + " --no_naccess --no_water_pdb --no_cavity_pdb")
     
 ### End def
